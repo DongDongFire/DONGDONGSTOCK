@@ -28,7 +28,7 @@ class stock_price_history:
         url='https://finance.naver.com/item/sise_day.nhn?code={code}'.format(code=code)
 
         df=pd.DataFrame()
-        for page in range(1,100):
+        for page in range(1,500):
             pg_url='{url}&page={page}'.format(url=url,page=page)
             df=df.append(pd.read_html(pg_url,header=0)[0],ignore_index=True)
 
